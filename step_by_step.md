@@ -46,5 +46,31 @@ From here we have all the files we need to perform the X-ray analysis.
 Documentation is [here](https://www.swift.ac.uk/analysis/xrt/barycorr.php)
 
 First `cd` into the directory with the data products (i.e., `xrt_files`), then run the following command,
+```
+barycorr ra=272.68549 dec=-26.15030
+Input file name:[sw00032459012xwtw2po_cl.evt] sw00032459012xwtw2po_cl.evt 
+Output file name:[sw00032459012xwtw2po_cl_bary.evt] sw00032459012xwtw2po_cl_bary.evt 
+Orbit ephemeris file(s) (or @filename, or GEOCENTER):[sw00032459012sao.fits] sw00032459012sao.fits
+```
+repeat this same command by replacing the input file with the `.hk` and `pat.fits` file, now we have our barycentric corrected data files, and we are ready to make data products 
 
+## Extract Data Products
+Here we will outline how to extract data products, namely Light curves and Spectra
+
+### Region files
+Region files adopt ds9 formatting. The way to make region files is to open the `.evt` file in `fv` or `ds9`, locating the peak pixel and making circular regions. I keep the region files in a directory called `region_files` and for this outburst we have both circular and annular regions (since the source is piled up during the burst)
+
+### Light Curve
+To extract light curves we are going to use `xselect` an example is as follows, we want to initialize, 
+```
+xselect [Enter]
+read event
+Enter the Event file dir [.]
+Enter Event file list [sw00032459012xwtw2po_cl.evt]
+```
+
+From here we want to specify the time binning and region files, for this example we are going to use a circular source region, and count rate of 1s
+```
+filter region 
+```
 
