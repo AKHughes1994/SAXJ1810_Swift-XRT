@@ -61,6 +61,9 @@ Here we will outline how to extract data products, namely Light curves and Spect
 Region files adopt ds9 formatting. The way to make region files is to open the `.evt` file in `fv` or `ds9`, locating the peak pixel and making circular regions. I keep the region files in a directory called `region_files` and for this outburst we have both circular and annular regions (since the source is piled up during the burst)
 
 ### Light Curve
+
+Documentation is [here](https://www.swift.ac.uk/analysis/xrt/timing.php) and [here](https://www.swift.ac.uk/analysis/xrt/lccorr.php)
+
 To extract light curves we are going to use `xselect` an example is as follows, we want to initialize, 
 ```
 xselect [Enter]
@@ -69,8 +72,12 @@ Enter the Event file dir [.]
 Enter Event file list [sw00032459012xwtw2po_cl.evt]
 ```
 
-From here we want to specify the time binning and region files, for this example we are going to use a circular source region, and count rate of 1s
+From here we want to specify the time binning and region files, for example we are going to use a circular source region, and count rate of 1s
 ```
-filter region 
+filter region ../region_files/src_circ.reg
+set binsize 1
+extract curve
+save curve src_circ_1s.lc 
 ```
 
+Applying the exposure time correction/background correction
