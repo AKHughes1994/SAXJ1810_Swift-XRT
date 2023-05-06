@@ -75,7 +75,7 @@ def main():
             time.sleep(10)
 
         # Retrieve the products
-        dictLC = myRequest.retrieveLightCurve(returnData=True)
+        dictLC = myRequest.retrieveLightCurve(returnData=True, deprecate=False)
 #        myRequest.downloadProducts('swift_lc', clobber=True)
 #        os.system('tar -xf swift_lc/lc.tar.gz -C swift_lc/')
 #        os.system('mv swift_lc/USER*/lc/* swift_lc/.')
