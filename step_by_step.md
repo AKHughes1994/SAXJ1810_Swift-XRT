@@ -13,6 +13,8 @@ In this section we will clean the event files with `xrtpipeline`, apply barrycen
 
 ### Running xrtpipeline
 
+Documentation [here](https://www.swift.ac.uk/analysis/xrt/xrtpipeline.php)
+
 When you download the observations from it should come in the form of a `.tar` file, i.e., `00032459012.tar`, we want to peform the following steps to run the xrtpipeline (remember to initialize HEASOFT with `heainit` or whatever your alias is),
 ```
 cd into_to_dir
@@ -21,5 +23,11 @@ xrtpipeline clobber=yes createexpomap=yes cleanup=no
 ```
 This will ask for a number of inputs, here is the inputs for this example,
 ```
-
+Source RA position (degrees or hh mm ss.s) or POINT or OBJECT[272.68549] 272.68549
+Source DEC position (degrees or dd mm ss.s) or POINT or OBJECT[-26.15030] -26.15030
+Target Archive Directory Path[00032459005] 00032459012
+Stem for FITS input files [i.e. sw00000000000][sw00032459005] sw00032459012
+Directory for outputs[00032459005-xrt] 00032459012-xrt
 ```
+This will run the pipeline creating the clean data products. 
+
