@@ -80,4 +80,28 @@ extract curve
 save curve src_circ_1s.lc 
 ```
 
-Applying the exposure time correction/background correction
+Applying the exposure time correction correction, from here,
+```
+xrtlccorr
+Name of the input region file or NONE to read region from lcfile[none] none
+Name of the input Light Curve FITS file or NONE to read region from regionfile[./00032459012-xrt/sw00032459012xwtw2stsr.lc] src_ann_3pix_1s.lc 
+Name of the Corrected Light Curve or DEFAULT for standard name[./00032459012-xrt/sw00032459012xwtw2stsr_corr.lc] src_ann_3pix_1s_corr.lc 
+Name of the output file or DEFAULT for standard name[./00032459012-xrt/sw00032459012xwtw2stsr_corrfact.fits] src_ann_3pix_1s_corrfact.fits    
+Name of the input Attitude FITS file[./00032459012/auxil/sw00032459012pat.fits.gz] ../xrt_files/sw00032459012pat.fits 
+Name of the output Instrument Map File or DEFAULT for standard name[./00032459012-xrt/sw00032459012xwtw2st_srawinstr.img] DEFAULT
+Name of the input Event FITS file[./00032459012-xrt/sw00032459012xwtw2st_cl.evt] ../xrt_files/sw00032459012xwtw2po_cl.evt
+Name of the input Housekeeping Header Packets FITS file[./00032459012-xrt/sw00032459012xhdtc.hk] ../xrt_files/sw00032459012xhdtc.hk 
+```
+
+Now apply the exposure time correction, 
+```
+lcmath err_mode=2
+Name of input FITS file[] src_ann_3pix_1s_corr.lc 
+Name of background FITS file[] bkg_circ_1s.lc 
+Name of output FITS file[] src_ann_3pix_1s_sub.lc 
+Scaling factor for input[1.] 0.9
+Scaling factor for background[1.] 1.0
+Add instead of subract?[no] no
+```
+
+Now you should have fully corrected, background subtracted light curves. The other option is to use the pipeline which should apply all of these corrections automatically, see ex. `get_lc_from_pipeline.py`
