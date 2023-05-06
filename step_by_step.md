@@ -29,5 +29,22 @@ Target Archive Directory Path[00032459005] 00032459012
 Stem for FITS input files [i.e. sw00000000000][sw00032459005] sw00032459012
 Directory for outputs[00032459005-xrt] 00032459012-xrt
 ```
-This will run the pipeline creating the clean data products. 
+This will run the pipeline creating the clean data products. Once the pipeline finished (without errors) it will make a lot of files, most of them we do not need. I make a new directory called `xrt_files`, and move in the following files, 
+```
+mv 00032459012-xrt/sw00032459012xwtw2po_cl.evt xrt_files/.
+mv 00032459012-xrt/sw00032459012xwtw2po_ex.img xrt_files/.
+mv 00032459012-xrt/sw00032459012xhdtc.hk xrt_files/.
+gunzip 00032459012/auxil/sw00032459012pat.fits.gz
+mv 00032459012/auxil/sw00032459012pat.fits xrt_files/.
+gunzip 00032459012/auxil/sw00032459012pat.fits.gz
+mv 00032459012/auxil/sw00032459012sao.fits xrt_files/.
+```
+From here we have all the files we need to perform the X-ray analysis.
+
+### Applying the Barycentric Correction
+
+Documentation is [here](https://www.swift.ac.uk/analysis/xrt/barycorr.php)
+
+First `cd` into the directory with the data products (i.e., `xrt_files`), then run the following command,
+
 
