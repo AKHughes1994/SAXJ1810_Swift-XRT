@@ -105,3 +105,16 @@ Add instead of subract?[no] no
 ```
 
 Now you should have fully corrected, background subtracted light curves. The other option is to use the pipeline which should apply all of these corrections automatically, see ex. `get_lc_from_pipeline.py`
+
+### Spectra
+We need to make the preliminary files (specifically the ARF and get the RMF file) 
+The arf file can be made by the following command
+```
+xrtmkarf clobber=yes expofile=sw00032459012xwtw2po_ex.img outfile=sw00032459012.arf phafile=src.pha srcx=-1 srcy=-1 psfflag=yes
+```
+The RMF file will be given in the output, e.g., 
+```
+
+```
+
+
