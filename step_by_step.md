@@ -3,7 +3,7 @@
 Before starting data reduction get the following information:
 1. Get the Observation IDs and the Source ID through [here](https://www.swift.psu.edu/operations/obsSchedule.php). The naming convention is 000 + targetID + segment number (e.g., 012). The name is 00032459012 for this example.
 2. The data is acquired from the archive located [here](https://www.swift.ac.uk/swift_portal/)
-3. The X-ray position of the source can be calcualted [here](https://www.swift.ac.uk/swift_portal/). For this source (SAX J1810.8-2609) the source position is (272.68532, -26.15054).
+3. The X-ray position of the source can be calcualted [here](https://www.swift.ac.uk/user_objects/). For this source (SAX J1810.8-2609) the source position is (272.68532, -26.15054).
 
 Once you have downloaded/got this information you are ready for HEASOFT data reduction
 
