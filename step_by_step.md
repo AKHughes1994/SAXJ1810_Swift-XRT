@@ -112,9 +112,10 @@ The arf file can be made by the following command
 ```
 xrtmkarf clobber=yes expofile=sw00032459012xwtw2po_ex.img outfile=sw00032459012.arf phafile=src.pha srcx=-1 srcy=-1 psfflag=yes
 ```
-The RMF file will be given in the output, e.g., 
+The RMF file will be given in the output of  `xrtmkarf`, e.g., 
 ```
-
+xrtmkarf_0.6.4: Info: Processing '/home/akh/Programs/caldb/data/swift/xrt/cpf/rmf/swxwt0to2s6_20131212v015.rmf' CALDB file.
 ```
+From here you need to apply grppha and then you have everything you need to fit spectra in Xspec of PyXspec
 
 
