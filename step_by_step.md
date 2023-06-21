@@ -36,7 +36,7 @@ mv 00032459012-xrt/sw00032459012xwtw2po_ex.img xrt_files/.
 mv 00032459012-xrt/sw00032459012xhdtc.hk xrt_files/.
 gunzip 00032459012/auxil/sw00032459012pat.fits.gz
 mv 00032459012/auxil/sw00032459012pat.fits xrt_files/.
-gunzip 00032459012/auxil/sw00032459012pat.fits.gz
+gunzip 00032459012/auxil/sw00032459012sao.fits.gz
 mv 00032459012/auxil/sw00032459012sao.fits xrt_files/.
 ```
 From here we have all the files we need to perform the X-ray analysis.
