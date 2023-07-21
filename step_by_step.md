@@ -123,10 +123,13 @@ If you do not have an X-ray detection, adopt the following steps:
 
 1. Using a 30-pixel extraction region get an initial estimate of the count rate then using the count rate pick an extraction region following Evans 2009. For the 2023 ToO observations of SAX J1810 the 30-pixel count rate (without background subtraction) was 1.55e-3 counts per second and the background count rate was 1.39e-2 (the annular region with an inner radius of 60 pixels and outer of 110 pixels). Therefore calculating the areas, and correcting for the different areas we get a background subtracted count rate (i.e., Corr = Src - Bkg * Area_ratio) of 2e-4, the lowest count rate region suggesting a 5-pixel extraction radius. 
 
-2. With the next extraction region get the number of total counts, do this using `xselect', and extracting a curve/spectra will output (see below). For this example there was only 1 photon in the 1-10 keV range. 
+2. With the next extraction region get the number of total counts, do this using `xselect', and extracting a curve/spectra will output (see below). For this example, there were only 1 + 0 = 1 photons (we got two back-to-back event files hence the summation) in the 1-10 keV range in the source range. For the background range, we got 54 + 31 = 85.
 ```
  Spectrum         has        1 count for  2.5815E-04 counts/sec
 ```
+3. Record the BACKSCAL for the Src (7.9e-5), background (2.669e-2), dad-time corrected on sources time (5.32448753e3). Use the ratio of the BACKSCAL parameters to correct for the different area of the extraction regions, and once again calculate a net number of counts (and a count rate using the exposure time). Adopt 3x the upper Gehrels error as your count rate.
+
+4. To convert from a count rate to a flux first make your arf and rmf file. 
 
 
 
