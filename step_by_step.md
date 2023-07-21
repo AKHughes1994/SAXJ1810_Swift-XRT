@@ -129,7 +129,7 @@ If you do not have an X-ray detection, adopt the following steps:
 ```
 3. Record the BACKSCAL for the Src (7.9e-5), background (2.669e-2), dad-time corrected on sources time (5.32448753e3). Use the ratio of the BACKSCAL parameters to correct for the different area of the extraction regions, and once again calculate a net number of counts (and a count rate using the exposure time). Adopt 3x the upper Gehrels error as your count rate.
 
-4. To convert from a count rate to a flux first make your arf and rmf file. 
+4. To convert from a count rate to a flux first make a spectrum, arf, and rmf file. Load in the spectrum and the arf (using `arf [ARFFILE]`) and rmf (using `rmf [RMFFILE]`) into xspec. Then pick a simple power-law model, and from there you can predict a count rate using `show rates`
 
 
 
