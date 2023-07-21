@@ -122,7 +122,12 @@ From here you need to apply grppha and then you have everything you need to fit 
 If you do not have an X-ray detection, adopt the following steps:
 
 1. Using a 30-pixel extraction region get an initial estimate of the count rate then using the count rate pick an extraction region following Evans 2009. For the 2023 ToO observations of SAX J1810 the 30-pixel count rate (without background subtraction) was 1.55e-3 counts per second and the background count rate was 1.39e-2 (the annular region with an inner radius of 60 pixels and outer of 110 pixels). Therefore calculating the areas, and correcting for the different areas we get a background subtracted count rate (i.e., Corr = Src - Bkg * Area_ratio) of 2e-4, the lowest count rate region suggesting a 5-pixel extraction radius. 
-2. 
+
+2. With the next extraction region get the number of total counts, do this using `xselect', and extracting a curve/spectra will output (see below). For this example there was only 1 photon in the 1-10 keV range. 
+```
+ Spectrum         has        1 count for  2.5815E-04 counts/sec
+```
+
 
 
 
