@@ -108,7 +108,7 @@ Now you should have fully corrected, background subtracted light curves. The oth
 
 ### Spectra
 We need to make the preliminary files (specifically the ARF and get the RMF file) 
-The arf file can be made by the following command
+The following command can make the arf file
 ```
 xrtmkarf clobber=yes expofile=sw00032459012xwtw2po_ex.img outfile=sw00032459012.arf phafile=src.pha srcx=-1 srcy=-1 psfflag=yes
 ```
@@ -117,5 +117,12 @@ The RMF file will be given in the output of  `xrtmkarf`, e.g.,
 xrtmkarf_0.6.4: Info: Processing '/home/akh/Programs/caldb/data/swift/xrt/cpf/rmf/swxwt0to2s6_20131212v015.rmf' CALDB file.
 ```
 From here you need to apply grppha and then you have everything you need to fit spectra in Xspec of PyXspec
+
+### X-ray upper limits
+If you do not have an X-ray detection, adopt the following steps:
+
+1. Using a 30-pixel extraction region get an initial estimate of the count rate then using the count rate pick an extraction region following Evans 2009. For the 2023 ToO observations of SAX J1810 the 30-pixel count rate (without background subtraction) was 1.55e-3 counts per second and the background count rate was 1.39e-2 (the annular region with an inner radius of 60 pixels and outer of 110 pixels). Therefore calculating the areas, and correcting for the different areas we get a background subtracted count rate (i.e., Corr = Src - Bkg * Area_ratio) of 2e-4, the lowest count rate region suggesting a 5-pixel extraction radius. 
+2. 
+
 
 
